@@ -26,37 +26,39 @@ namespace Know_Your_Scholarship_
             }
 
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd;
-            MySqlDataReader mdr;
 
             con.Open();
 
-            var selectQuery = "select * from registrar where username = '" + textBox2.Text.Trim() +
+            var selectQuery = "select *" +
+                              " from registrar " +
+                              "WHERE username = '" + textBox2.Text.Trim() +
                               "' and password = '" + textBox3.Text.Trim() + "'";
 
-            cmd = new MySqlCommand(selectQuery, con);
-            mdr = cmd.ExecuteReader();
+            var sqlCommand = new MySqlCommand(selectQuery, con);
+            var dataReader = sqlCommand.ExecuteReader();
 
-            if (mdr.Read())
+            if (dataReader.Read())
             {
                 con.Close();
 
                 con.Open();
 
-                selectQuery = "select password from scholarship_confirm where id = " + textBox1.Text;
-                cmd = new MySqlCommand(selectQuery, con);
-                mdr = cmd.ExecuteReader();
+                selectQuery = "select password" +
+                              " from scholarship_confirm " +
+                              "WHERE id = " + textBox1.Text.Trim();
+                sqlCommand = new MySqlCommand(selectQuery, con);
+                dataReader = sqlCommand.ExecuteReader();
 
-                if (!mdr.Read())
+                if (!dataReader.Read())
                 {
                     con.Close();
                     MessageBox.Show(@"Password is not set!", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                var password = mdr["password"].ToString();
+                var password = dataReader["password"].ToString();
 
-                MessageBox.Show("Passcode is : " + password);
+                MessageBox.Show(@"Passcode is : " + password);
 
                 con.Close();
             }

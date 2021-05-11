@@ -32,7 +32,8 @@ namespace Know_Your_Scholarship_
 
             if (textBox2.Text == "")
             {
-                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -42,7 +43,10 @@ namespace Know_Your_Scholarship_
 
             con.Open();
 
-            var selectQuery = "select * from login_alumni where id = '" + textBox1.Text.Trim() + "' and password = '" +
+            var selectQuery = "select *" +
+                              " from login_alumni where id = '" +
+                              textBox1.Text.Trim() +
+                              "' and password = '" +
                               textBox2.Text + "'";
 
             cmd = new MySqlCommand(selectQuery, con);
@@ -52,7 +56,9 @@ namespace Know_Your_Scholarship_
             {
                 con.Close();
                 con.Open();
-                selectQuery = "select * from alumni where id = '" + textBox1.Text.Trim() + "'";
+                selectQuery = "select *" +
+                              " from alumni where id = '" +
+                              textBox1.Text.Trim() + "'";
                 cmd = new MySqlCommand(selectQuery, con);
                 mdr = cmd.ExecuteReader();
                 mdr.Read();

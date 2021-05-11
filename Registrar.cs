@@ -14,24 +14,30 @@ namespace Know_Your_Scholarship_
         private void Registrar_Load(object sender, EventArgs e)
         {
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd;
-            MySqlDataReader mdr;
 
             con.Open();
 
-            string selectQuery;
+            const string selectQuery = "SELECT scholarship.id AS sid," +
+                                       " professor.name AS pname," +
+                                       " university.name AS uname," +
+                                       " subject.name AS sname," +
+                                       " scholarship.referringAlumni AS aname," +
+                                       " scholarship.referringFaculty AS fname," +
+                                       " scholarship.confirmation AS confirmation " +
+                                       "FROM scholarship, university, professor, subject " +
+                                       "WHERE scholarship.referringFaculty IS NOT NULL" +
+                                       " AND scholarship.referringAlumni IS NULL" +
+                                       " AND scholarship.professorFunding = professor.id" +
+                                       " AND professor.university_id = university.id" +
+                                       " AND professor.subject_id = subject.id";
 
-            selectQuery =
-                "SELECT scholarship.id AS sid, professor.name AS pname, university.name AS uname, subject.name AS sname, scholarship.referringAlumni AS aname, scholarship.referringFaculty AS fname, scholarship.confirmation AS confirmation FROM scholarship, university, professor, subject WHERE scholarship.referringFaculty IS NOT NULL AND scholarship.referringAlumni IS NULL AND scholarship.professorFunding = professor.id AND professor.university_id = university.id AND professor.subject_id = subject.id";
-
-            cmd = new MySqlCommand(selectQuery, con);
-            mdr = cmd.ExecuteReader();
+            var command = new MySqlCommand(selectQuery, con);
+            var mdr = command.ExecuteReader();
 
             listView1.Items.Clear();
             while (mdr.Read())
             {
-                var item = new ListViewItem();
-                item.Text = mdr["sid"].ToString();
+                var item = new ListViewItem {Text = mdr["sid"].ToString()};
                 item.SubItems.Add(mdr["pname"].ToString());
                 item.SubItems.Add(mdr["uname"].ToString());
                 item.SubItems.Add(mdr["sname"].ToString());
@@ -45,29 +51,35 @@ namespace Know_Your_Scholarship_
             con.Close();
 
             var con2 = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd2;
-            MySqlDataReader mdr2;
 
             con2.Open();
 
-            string selectQuery2;
+            const string selectQuery2 = "SELECT scholarship.id AS sid," +
+                                        " professor.name AS pname," +
+                                        " university.name AS uname," +
+                                        " subject.name AS sname," +
+                                        " scholarship.referringAlumni AS aname," +
+                                        " scholarship.referringFaculty AS fname," +
+                                        " scholarship.confirmation AS confirmation " +
+                                        "FROM scholarship, university, professor, subject " +
+                                        "WHERE scholarship.referringFaculty IS NULL" +
+                                        " AND scholarship.referringAlumni IS NOT NULL" +
+                                        " AND scholarship.professorFunding = professor.id" +
+                                        " AND professor.university_id = university.id" +
+                                        " AND professor.subject_id = subject.id";
 
-            selectQuery2 =
-                "SELECT scholarship.id AS sid, professor.name AS pname, university.name AS uname, subject.name AS sname, scholarship.referringAlumni AS aname, scholarship.referringFaculty AS fname, scholarship.confirmation AS confirmation FROM scholarship, university, professor, subject WHERE scholarship.referringFaculty IS NULL AND scholarship.referringAlumni IS NOT NULL AND scholarship.professorFunding = professor.id AND professor.university_id = university.id AND professor.subject_id = subject.id";
+            var sqlCommand = new MySqlCommand(selectQuery2, con2);
+            var dataReader = sqlCommand.ExecuteReader();
 
-            cmd2 = new MySqlCommand(selectQuery2, con2);
-            mdr2 = cmd2.ExecuteReader();
-
-            while (mdr2.Read())
+            while (dataReader.Read())
             {
-                var item = new ListViewItem();
-                item.Text = mdr2["sid"].ToString();
-                item.SubItems.Add(mdr2["pname"].ToString());
-                item.SubItems.Add(mdr2["uname"].ToString());
-                item.SubItems.Add(mdr2["sname"].ToString());
-                item.SubItems.Add(mdr2["aname"].ToString());
-                item.SubItems.Add(mdr2["fname"].ToString());
-                item.SubItems.Add(mdr2["confirmation"].ToString());
+                var item = new ListViewItem {Text = dataReader["sid"].ToString()};
+                item.SubItems.Add(dataReader["pname"].ToString());
+                item.SubItems.Add(dataReader["uname"].ToString());
+                item.SubItems.Add(dataReader["sname"].ToString());
+                item.SubItems.Add(dataReader["aname"].ToString());
+                item.SubItems.Add(dataReader["fname"].ToString());
+                item.SubItems.Add(dataReader["confirmation"].ToString());
 
                 listView1.Items.Add(item);
             }
@@ -100,16 +112,16 @@ namespace Know_Your_Scholarship_
                 }
 
                 var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-                MySqlCommand cmd;
-                MySqlDataReader mdr;
 
                 con.Open();
 
-                var selectQuery = "update scholarship set confirmation = 'confirmed' where id = " + textBox1.Text;
-                cmd = new MySqlCommand(selectQuery, con);
-                mdr = cmd.ExecuteReader();
+                var selectQuery = "update scholarship" +
+                                  " set confirmation = 'confirmed' where id = " +
+                                  textBox1.Text.Trim();
+                var sqlCommand = new MySqlCommand(selectQuery, con);
+                var dataReader = sqlCommand.ExecuteReader();
 
-                while (mdr.Read())
+                while (dataReader.Read())
                 {
                 }
 
@@ -117,27 +129,30 @@ namespace Know_Your_Scholarship_
 
                 con.Open();
 
-                selectQuery = "insert into scholarship_confirm values (" + textBox1.Text + ", '" + textBox2.Text + "')";
-                cmd = new MySqlCommand(selectQuery, con);
+                selectQuery = "insert into" +
+                              " scholarship_confirm values (" +
+                              textBox1.Text.Trim() + ", '" +
+                              textBox2.Text.Trim() + "')";
+                sqlCommand = new MySqlCommand(selectQuery, con);
                 try
                 {
-                    mdr = cmd.ExecuteReader();
+                    dataReader = sqlCommand.ExecuteReader();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(@"Scholarship doesnot exist", @"Warning", MessageBoxButtons.OK,
+                    MessageBox.Show(@"Scholarship does not exist", @"Warning", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                     return;
                 }
 
 
-                while (mdr.Read())
+                while (dataReader.Read())
                 {
                 }
 
                 con.Close();
 
-                MessageBox.Show("Scholarship Confirmed!");
+                MessageBox.Show(@"Scholarship Confirmed!");
             }
 
             catch (Exception ex)

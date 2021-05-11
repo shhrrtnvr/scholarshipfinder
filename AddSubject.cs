@@ -20,7 +20,9 @@ namespace Know_Your_Scholarship_
             con.Open();
 
             var dt = new DataTable();
-            var selectQuery = "insert into subject (name) values ('" + textBox1.Text + "')";
+            var selectQuery = "insert into" +
+                              " subject (name) values ('" +
+                              textBox1.Text.Trim() + "')";
 
             try
             {

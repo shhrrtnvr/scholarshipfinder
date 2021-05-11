@@ -17,22 +17,23 @@ namespace Know_Your_Scholarship_
         private void button1_Click(object sender, EventArgs e)
         {
             var r = new Regex(@"\D");
-            if (r.IsMatch(textBox1.Text))
+            if (r.IsMatch(textBox1.Text.Trim()))
             {
                 MessageBox.Show(@"ID must be a number. Can not contain alphabet, white space or any special character.",
                     @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (textBox1.Text.Length != 9)
+            if (textBox1.Text.Trim().Length != 9)
             {
                 MessageBox.Show(@"ID can have 9 digits only", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (textBox2.Text == "")
+            if (textBox2.Text.Trim() == "")
             {
-                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -42,7 +43,9 @@ namespace Know_Your_Scholarship_
 
             con.Open();
 
-            var selectQuery = "select * from login_student where id = '" + textBox1.Text + "' and password = '" +
+            var selectQuery = "select *" +
+                              " from login_student where id = '" +
+                              textBox1.Text.Trim() + "' and password = '" +
                               textBox2.Text + "'";
 
             cmd = new MySqlCommand(selectQuery, con);
@@ -52,7 +55,9 @@ namespace Know_Your_Scholarship_
             {
                 con.Close();
                 con.Open();
-                selectQuery = "select * from student where id = '" + textBox1.Text.Trim() + "'";
+                selectQuery = "select *" +
+                              " from student where id = '" +
+                              textBox1.Text.Trim() + "'";
                 cmd = new MySqlCommand(selectQuery, con);
                 mdr = cmd.ExecuteReader();
                 mdr.Read();

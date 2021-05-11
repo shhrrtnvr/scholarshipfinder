@@ -60,7 +60,8 @@ namespace Know_Your_Scholarship_
 
             if (textBox3.Text.Trim() == "")
             {
-                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -94,8 +95,12 @@ namespace Know_Your_Scholarship_
                 con.Open();
 
                 var dt = new DataTable();
-                var selectQuery = "insert into student(id, name) values ('" + textBox2.Text.Trim() + "', '" +
-                                  formattedName + "')";
+                var selectQuery = "insert into" +
+                                  " student(id, name)" +
+                                  " values ('" +
+                                  textBox2.Text.Trim() + "', '" +
+                                  formattedName +
+                                  "')";
 
                 try
                 {
@@ -122,8 +127,12 @@ namespace Know_Your_Scholarship_
                 con2.Open();
 
                 var dt2 = new DataTable();
-                var selectQuery2 = "insert into login_student(id, password) values ('" + textBox2.Text + "', '" +
-                                   textBox3.Text + "')";
+                var selectQuery2 = "insert into" +
+                                   " login_student(id, password)" +
+                                   " values ('" +
+                                   textBox2.Text + "', '" +
+                                   textBox3.Text +
+                                   "')";
 
                 try
                 {
@@ -133,7 +142,7 @@ namespace Know_Your_Scholarship_
 
                 catch (Exception)
                 {
-                    ;
+                    // ignored
                 }
 
                 con2.Close();

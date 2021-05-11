@@ -59,7 +59,8 @@ namespace Know_Your_Scholarship_
 
             if (textBox3.Text.Trim() == "")
             {
-                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -88,17 +89,20 @@ namespace Know_Your_Scholarship_
                     }
 
                 var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-                MySqlDataAdapter sda;
 
                 con.Open();
 
                 var dt = new DataTable();
-                var selectQuery = "insert into faculty(id, name) values ('" + textBox2.Text + "', '" + formattedName +
+                var selectQuery = "insert into" +
+                                  " faculty(id, name)" +
+                                  " values ('" +
+                                  textBox2.Text + "', '" +
+                                  formattedName +
                                   "')";
 
                 try
                 {
-                    sda = new MySqlDataAdapter(selectQuery, con);
+                    var sda = new MySqlDataAdapter(selectQuery, con);
                     sda.Fill(dt);
 
                     MessageBox.Show(@"Registration Completed!", @"Successful", MessageBoxButtons.OK,
@@ -121,8 +125,12 @@ namespace Know_Your_Scholarship_
                 con2.Open();
 
                 var dt2 = new DataTable();
-                var selectQuery2 = "insert into login_faculty(id, password) values ('" + textBox2.Text + "', '" +
-                                   textBox3.Text + "')";
+                var selectQuery2 = "insert into" +
+                                   " login_faculty(id, password)" +
+                                   " values ('" +
+                                   textBox2.Text + "', '" +
+                                   textBox3.Text +
+                                   "')";
 
                 try
                 {

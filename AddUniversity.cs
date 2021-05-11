@@ -26,13 +26,13 @@ namespace Know_Your_Scholarship_
 
             if (!r.IsMatch(textBox1.Text))
             {
-                MessageBox.Show(@"Invalid University. Only alphabets and space allowed", @"Warning", MessageBoxButtons.OK,
+                MessageBox.Show(@"Invalid University. Only alphabets and space allowed", @"Warning",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }
 
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlDataAdapter sda;
 
             var university = textBox1.Text.Trim();
             var formattedUni = new StringBuilder();
@@ -63,12 +63,15 @@ namespace Know_Your_Scholarship_
             con.Open();
 
             var dt = new DataTable();
-            var selectQuery = "insert into university (name, country_id) values ('" + formattedUni + "', " +
-                              textBox2.Text + ")";
+            var selectQuery = "insert into" +
+                              " university (name, country_id) values ('" +
+                              formattedUni +
+                              "', " +
+                              textBox2.Text.Trim() + ")";
 
             try
             {
-                sda = new MySqlDataAdapter(selectQuery, con);
+                var sda = new MySqlDataAdapter(selectQuery, con);
                 sda.Fill(dt);
 
                 MessageBox.Show(@"University Added", @"Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -87,15 +90,14 @@ namespace Know_Your_Scholarship_
         private void AddUniversity_Load(object sender, EventArgs e)
         {
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd;
-            MySqlDataReader mdr;
 
             con.Open();
 
-            string selectQuery;
-            selectQuery = "SELECT name FROM country";
-            cmd = new MySqlCommand(selectQuery, con);
-            mdr = cmd.ExecuteReader();
+            const string selectQuery = "SELECT" +
+                                       " name " +
+                                       "FROM country";
+            var cmd = new MySqlCommand(selectQuery, con);
+            var mdr = cmd.ExecuteReader();
 
             comboBox2.Items.Clear();
 
@@ -107,25 +109,25 @@ namespace Know_Your_Scholarship_
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd;
-            MySqlDataReader mdr;
 
             con.Open();
 
-            string selectQuery;
-            selectQuery = "SELECT id FROM country WHERE name = '" + comboBox2.Text + "'";
-            cmd = new MySqlCommand(selectQuery, con);
-            mdr = cmd.ExecuteReader();
+            var selectQuery = "SELECT" +
+                              " id " +
+                              "FROM country " +
+                              "WHERE name = '" +
+                              comboBox2.Text.Trim() + "'";
+            var cmd = new MySqlCommand(selectQuery, con);
+            var mdr = cmd.ExecuteReader();
 
             mdr.Read();
-            textBox2.Text = mdr["id"].ToString();
+            textBox2.Text = mdr["id"].ToString().Trim();
 
             con.Close();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            ;
         }
     }
 }

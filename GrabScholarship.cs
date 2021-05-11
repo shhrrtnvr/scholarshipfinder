@@ -110,7 +110,8 @@ namespace Know_Your_Scholarship_
                     textBox6.Text = "";
                     textBox7.Text = "";
                     textBox8.Text = "";
-                    MessageBox.Show(@"Invalid Scholarship ID", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"Invalid Scholarship ID", @"Warning", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
 
                 con3.Close();

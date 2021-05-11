@@ -26,14 +26,14 @@ namespace Know_Your_Scholarship_
             string selectQuery;
 
             selectQuery =
-                "SELECT scholarship.id AS sid,"+
-                " professor.name AS pname, "+
-                "university.name AS uname, "+
-                "subject.name AS sname,"+
-                " scholarship.referringAlumni AS aname, "+
-                "scholarship.referringFaculty AS fname, "+
+                "SELECT scholarship.id AS sid," +
+                " professor.name AS pname, " +
+                "university.name AS uname, " +
+                "subject.name AS sname," +
+                " scholarship.referringAlumni AS aname, " +
+                "scholarship.referringFaculty AS fname, " +
                 "scholarship.status AS sstatus " +
-                "FROM scholarship, "+
+                "FROM scholarship, " +
                 "university, professor, " +
                 "subject WHERE scholarship.referringFaculty IS NOT NULL AND " +
                 "scholarship.referringAlumni IS NULL AND " +
@@ -70,8 +70,8 @@ namespace Know_Your_Scholarship_
             string selectQuery2;
 
             selectQuery2 =
-                "SELECT scholarship.id AS sid, "+
-                "professor.name AS pname, "+
+                "SELECT scholarship.id AS sid, " +
+                "professor.name AS pname, " +
                 "university.name AS uname, " +
                 "subject.name AS sname, " +
                 "scholarship.referringAlumni AS aname, " +
@@ -116,7 +116,7 @@ namespace Know_Your_Scholarship_
 
             if (comboBox1.Text.Trim() == "Subject")
             {
-                selectQuery = "select name "+"from subject";
+                selectQuery = "select name " + "from subject";
 
                 cmd = new MySqlCommand(selectQuery, con);
                 mdr = cmd.ExecuteReader();
@@ -164,7 +164,7 @@ namespace Know_Your_Scholarship_
                 con.Open();
 
                 selectQuery =
-                    "SELECT scholarship.id AS sid, "+
+                    "SELECT scholarship.id AS sid, " +
                     "professor.name AS pname, " +
                     "university.name AS uname, " +
                     "subject.name AS sname, " +
@@ -243,7 +243,7 @@ namespace Know_Your_Scholarship_
                 con.Open();
 
                 selectQuery =
-                    "SELECT scholarship.id AS sid, "+
+                    "SELECT scholarship.id AS sid, " +
                     "professor.name AS pname, " +
                     "university.name AS uname, " +
                     "subject.name AS sname, " +
@@ -283,7 +283,7 @@ namespace Know_Your_Scholarship_
                 con.Open();
 
                 selectQuery2 =
-                    "SELECT scholarship.id AS sid, "+
+                    "SELECT scholarship.id AS sid, " +
                     "professor.name AS pname, " +
                     "university.name AS uname, " +
                     "subject.name AS sname, " +
@@ -325,7 +325,7 @@ namespace Know_Your_Scholarship_
                 con.Open();
 
                 selectQuery =
-                    "SELECT scholarship.id AS sid, "+
+                    "SELECT scholarship.id AS sid, " +
                     "professor.name AS pname, " +
                     "university.name AS uname, " +
                     "subject.name AS sname, " +
@@ -364,7 +364,7 @@ namespace Know_Your_Scholarship_
                 con.Open();
 
                 selectQuery2 =
-                    "SELECT scholarship.id AS sid, "+
+                    "SELECT scholarship.id AS sid, " +
                     "professor.name AS pname, " +
                     "university.name AS uname, " +
                     "subject.name AS sname, " +

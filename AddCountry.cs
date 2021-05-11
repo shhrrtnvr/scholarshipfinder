@@ -57,11 +57,11 @@ namespace Know_Your_Scholarship_
             con.Open();
 
             var dt = new DataTable();
-            
+
             var selectQuery = "insert into" +
-                              " country (name)"+
-                              " values ('" + 
-                              formattedCountry + 
+                              " country (name)" +
+                              " values ('" +
+                              formattedCountry +
                               "')";
 
             try
@@ -72,7 +72,7 @@ namespace Know_Your_Scholarship_
                 MessageBox.Show(@"Country Added", @"Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(@"Country already exists", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

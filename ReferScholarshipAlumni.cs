@@ -26,7 +26,8 @@ namespace Know_Your_Scholarship_
             con.Open();
 
             string selectQuery;
-            selectQuery = "SELECT name FROM subject";
+            selectQuery = "SELECT name" +
+                          " FROM subject";
             cmd = new MySqlCommand(selectQuery, con);
             mdr = cmd.ExecuteReader();
 
@@ -43,7 +44,8 @@ namespace Know_Your_Scholarship_
             con2.Open();
 
             string selectQuery2;
-            selectQuery2 = "SELECT name FROM country";
+            selectQuery2 = "SELECT name" +
+                           " FROM country";
             cmd2 = new MySqlCommand(selectQuery2, con2);
             mdr2 = cmd2.ExecuteReader();
 
@@ -76,18 +78,17 @@ namespace Know_Your_Scholarship_
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd;
-            MySqlDataReader mdr;
 
             con.Open();
 
-            string selectQuery;
-            selectQuery = "SELECT id FROM country WHERE name = '" + comboBox2.Text + "'";
-            cmd = new MySqlCommand(selectQuery, con);
-            mdr = cmd.ExecuteReader();
+            var selectQuery = "SELECT id" +
+                              " FROM country WHERE name = '"
+                              + comboBox2.Text.Trim() + "'";
+            var sqlCommand = new MySqlCommand(selectQuery, con);
+            var dataReader = sqlCommand.ExecuteReader();
 
-            mdr.Read();
-            textBox6.Text = mdr["id"].ToString();
+            dataReader.Read();
+            textBox6.Text = dataReader["id"].ToString();
 
             con.Close();
 
@@ -98,7 +99,9 @@ namespace Know_Your_Scholarship_
             con2.Open();
 
             string selectQuery2;
-            selectQuery2 = "SELECT name FROM university WHERE country_id = " + textBox6.Text;
+            selectQuery2 = "SELECT name" +
+                           " FROM university WHERE country_id = " +
+                           textBox6.Text.Trim();
             cmd2 = new MySqlCommand(selectQuery2, con2);
             mdr2 = cmd2.ExecuteReader();
 
@@ -112,18 +115,17 @@ namespace Know_Your_Scholarship_
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd;
-            MySqlDataReader mdr;
 
             con.Open();
 
-            string selectQuery;
-            selectQuery = "SELECT id FROM university WHERE name = '" + comboBox1.Text + "'";
-            cmd = new MySqlCommand(selectQuery, con);
-            mdr = cmd.ExecuteReader();
+            var selectQuery = "SELECT id" +
+                              " FROM university WHERE name = '" +
+                              comboBox1.Text.Trim() + "'";
+            var sqlCommand = new MySqlCommand(selectQuery, con);
+            var dataReader = sqlCommand.ExecuteReader();
 
-            mdr.Read();
-            textBox1.Text = mdr["id"].ToString();
+            dataReader.Read();
+            textBox1.Text = dataReader["id"].ToString();
 
             con.Close();
         }
@@ -137,18 +139,17 @@ namespace Know_Your_Scholarship_
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlCommand cmd;
-            MySqlDataReader mdr;
 
             con.Open();
 
-            string selectQuery;
-            selectQuery = "SELECT id FROM subject WHERE name = '" + comboBox3.Text + "'";
-            cmd = new MySqlCommand(selectQuery, con);
-            mdr = cmd.ExecuteReader();
+            var selectQuery = "SELECT id" +
+                              " FROM subject WHERE name = '" +
+                              comboBox3.Text.Trim() + "'";
+            var sqlCommand = new MySqlCommand(selectQuery, con);
+            var dataReader = sqlCommand.ExecuteReader();
 
-            mdr.Read();
-            textBox2.Text = mdr["id"].ToString();
+            dataReader.Read();
+            textBox2.Text = dataReader["id"].ToString();
 
             con.Close();
         }
@@ -171,7 +172,8 @@ namespace Know_Your_Scholarship_
 
             if (!r.IsMatch(textBox3.Text))
             {
-                MessageBox.Show(@"Invalid Professor. Only alphabets and space allowed", @"Warning", MessageBoxButtons.OK,
+                MessageBox.Show(@"Invalid Professor. Only alphabets and space allowed", @"Warning",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }
@@ -210,16 +212,15 @@ namespace Know_Your_Scholarship_
                 }
 
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlDataAdapter sda;
-            MySqlCommandBuilder scb;
-            var selectQuery = "select * from professor";
+            var selectQuery = "select *" +
+                              " from professor";
             var ds = new DataSet();
 
             con.Open();
 
-            sda = new MySqlDataAdapter(selectQuery, con);
-            scb = new MySqlCommandBuilder(sda);
-            sda.Fill(ds, "professor");
+            var dataAdapter = new MySqlDataAdapter(selectQuery, con);
+            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
+            dataAdapter.Fill(ds, "professor");
 
             var dr = ds.Tables["professor"].NewRow();
 
@@ -231,7 +232,7 @@ namespace Know_Your_Scholarship_
 
                 ds.Tables["professor"].Rows.Add(dr);
 
-                var adpt = sda.Update(ds, "professor");
+                var adpt = dataAdapter.Update(ds, "professor");
 
                 if (adpt == 1)
                 {
@@ -255,7 +256,9 @@ namespace Know_Your_Scholarship_
             con2.Open();
 
             string selectQuery2;
-            selectQuery2 = "SELECT id FROM professor WHERE name = '" + textBox3.Text + "'";
+            selectQuery2 = "SELECT id" +
+                           " FROM professor WHERE name = '" +
+                           textBox3.Text + "'";
             cmd2 = new MySqlCommand(selectQuery2, con2);
             mdr2 = cmd2.ExecuteReader();
 
@@ -283,7 +286,8 @@ namespace Know_Your_Scholarship_
 
             if (!r.IsMatch(textBox3.Text))
             {
-                MessageBox.Show(@"Invalid Professor. Only alphabets and space allowed", @"Warning", MessageBoxButtons.OK,
+                MessageBox.Show(@"Invalid Professor. Only alphabets and space allowed", @"Warning",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }
@@ -322,16 +326,15 @@ namespace Know_Your_Scholarship_
                 }
 
             var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            MySqlDataAdapter sda;
-            MySqlCommandBuilder scb;
-            var selectQuery = "select * from scholarship";
+            var selectQuery = "select *" +
+                              " from scholarship";
             var ds = new DataSet();
 
             con.Open();
 
-            sda = new MySqlDataAdapter(selectQuery, con);
-            scb = new MySqlCommandBuilder(sda);
-            sda.Fill(ds, "scholarship");
+            var dataAdapter = new MySqlDataAdapter(selectQuery, con);
+            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
+            dataAdapter.Fill(ds, "scholarship");
 
             var dr = ds.Tables["scholarship"].NewRow();
 
@@ -343,9 +346,9 @@ namespace Know_Your_Scholarship_
 
                 ds.Tables["scholarship"].Rows.Add(dr);
 
-                var adpt = sda.Update(ds, "scholarship");
+                var update = dataAdapter.Update(ds, "scholarship");
 
-                if (adpt == 1)
+                if (update == 1)
                 {
                     MessageBox.Show(@"Referral Successful!", @"Confirmation", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);

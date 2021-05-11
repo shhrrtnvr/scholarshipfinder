@@ -21,7 +21,8 @@ namespace Know_Your_Scholarship_
 
             if (textBox2.Text == "")
             {
-                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Password can not be empty.", @"Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -31,7 +32,10 @@ namespace Know_Your_Scholarship_
 
             con.Open();
 
-            var selectQuery = "select * from registrar where username = '" + textBox1.Text + "' and password = '" +
+            var selectQuery = "select * " +
+                              "from registrar where username = '" +
+                              textBox1.Text +
+                              "' and password = '" +
                               textBox2.Text + "'";
 
             cmd = new MySqlCommand(selectQuery, con);

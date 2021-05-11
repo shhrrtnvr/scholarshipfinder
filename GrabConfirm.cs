@@ -28,9 +28,9 @@ namespace Know_Your_Scholarship_
             con.Open();
 
             var selectQuery = "select * " +
-                              "from scholarship_confirm"+
-                              " where id = " 
-                              + label3.Text + 
+                              "from scholarship_confirm" +
+                              " where id = "
+                              + label3.Text +
                               " and password = '" +
                               textBox1.Text + "'";
 
@@ -43,9 +43,9 @@ namespace Know_Your_Scholarship_
 
                 con.Open();
 
-                selectQuery = "update scholarship"+
-                              " set status = '" + 
-                              label4.Text.Trim() + 
+                selectQuery = "update scholarship" +
+                              " set status = '" +
+                              label4.Text.Trim() +
                               " Grabbed!' where id = " +
                               label3.Text.Trim();
                 cmd = new MySqlCommand(selectQuery, con);
@@ -57,7 +57,8 @@ namespace Know_Your_Scholarship_
 
                 con.Close();
 
-                MessageBox.Show(@"Congratulations! You have successfully grabbed this scholarship!", @"Congratulations!",
+                MessageBox.Show(@"Congratulations! You have successfully grabbed this scholarship!",
+                    @"Congratulations!",
                     MessageBoxButtons.OK);
 
                 Hide();
