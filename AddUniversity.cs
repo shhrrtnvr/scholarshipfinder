@@ -77,9 +77,9 @@ namespace Know_Your_Scholarship_
                 MessageBox.Show(@"University Added", @"Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(@"University already exists", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             con.Close();

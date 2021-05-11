@@ -32,9 +32,9 @@ namespace Know_Your_Scholarship_
                 MessageBox.Show(@"Subject Added", @"Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(@"Subject already exists", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             con.Close();
