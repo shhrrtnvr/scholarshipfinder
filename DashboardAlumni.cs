@@ -6,6 +6,7 @@ namespace Know_Your_Scholarship_
     public partial class DashboardAlumni : Form
     {
         public static string Username = "";
+        public static int id;
 
         public DashboardAlumni()
         {
@@ -20,8 +21,8 @@ namespace Know_Your_Scholarship_
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Username = label1.Text;
-
+            Username = LogInAlumni.Username;
+            id = LogInAlumni.id;
             var f = new ReferScholarshipAlumni();
             f.Show();
         }

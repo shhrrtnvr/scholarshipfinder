@@ -98,10 +98,9 @@ namespace Know_Your_Scholarship_
 
             con2.Open();
 
-            string selectQuery2;
-            selectQuery2 = "SELECT name" +
-                           " FROM university WHERE country_id = " +
-                           textBox6.Text.Trim();
+            var selectQuery2 = "SELECT name" +
+                               " FROM university WHERE country_id = " +
+                               textBox6.Text.Trim();
             cmd2 = new MySqlCommand(selectQuery2, con2);
             mdr2 = cmd2.ExecuteReader();
 
@@ -211,18 +210,19 @@ namespace Know_Your_Scholarship_
                     }
                 }
 
-            var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            var selectQuery = "select *" +
-                              " from professor";
-            var ds = new DataSet();
+            MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=kys");
+            MySqlDataAdapter sda;
+            MySqlCommandBuilder scb;
+            string selectQuery = "select * from professor";
+            DataSet ds = new DataSet();
 
             con.Open();
 
-            var dataAdapter = new MySqlDataAdapter(selectQuery, con);
-            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
-            dataAdapter.Fill(ds, "professor");
+            sda = new MySqlDataAdapter(selectQuery, con);
+            scb = new MySqlCommandBuilder(sda);
+            sda.Fill(ds, "professor");
 
-            var dr = ds.Tables["professor"].NewRow();
+            DataRow dr = ds.Tables["professor"].NewRow();
 
             try
             {
@@ -232,12 +232,11 @@ namespace Know_Your_Scholarship_
 
                 ds.Tables["professor"].Rows.Add(dr);
 
-                var adpt = dataAdapter.Update(ds, "professor");
+                int adpt = sda.Update(ds, "professor");
 
                 if (adpt == 1)
                 {
-                    MessageBox.Show(@"Professor added in the database! Click Refer to complete the process.",
-                        @"Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Professor added in the database! Click Refer to complete the process.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     button6.Enabled = true;
                 }
             }
@@ -249,16 +248,14 @@ namespace Know_Your_Scholarship_
 
             con.Close();
 
-            var con2 = new MySqlConnection("server=localhost;user id=root;database=kys");
+            MySqlConnection con2 = new MySqlConnection("server=localhost;user id=root;database=kys");
             MySqlCommand cmd2;
             MySqlDataReader mdr2;
 
             con2.Open();
 
             string selectQuery2;
-            selectQuery2 = "SELECT id" +
-                           " FROM professor WHERE name = '" +
-                           textBox3.Text + "'";
+            selectQuery2 = "SELECT id FROM professor WHERE name = '" + textBox3.Text + "'";
             cmd2 = new MySqlCommand(selectQuery2, con2);
             mdr2 = cmd2.ExecuteReader();
 
@@ -325,33 +322,33 @@ namespace Know_Your_Scholarship_
                     }
                 }
 
-            var con = new MySqlConnection("server=localhost;user id=root;database=kys");
-            var selectQuery = "select *" +
-                              " from scholarship";
-            var ds = new DataSet();
+            MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=kys");
+            MySqlDataAdapter sda;
+            MySqlCommandBuilder scb;
+            string selectQuery = "select * from scholarship";
+            DataSet ds = new DataSet();
 
             con.Open();
 
-            var dataAdapter = new MySqlDataAdapter(selectQuery, con);
-            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
-            dataAdapter.Fill(ds, "scholarship");
+            sda = new MySqlDataAdapter(selectQuery, con);
+            scb = new MySqlCommandBuilder(sda);
+            sda.Fill(ds, "scholarship");
 
-            var dr = ds.Tables["scholarship"].NewRow();
+            DataRow dr = ds.Tables["scholarship"].NewRow();
 
             try
             {
-                dr["referringAlumni"] = Convert.ToInt32(label6.Text);
+                dr["referringAlumni"] = DashboardAlumni.id;
                 dr["professorFunding"] = Convert.ToInt32(textBox4.Text);
                 dr["status"] = "Ungrabbed!";
 
                 ds.Tables["scholarship"].Rows.Add(dr);
 
-                var update = dataAdapter.Update(ds, "scholarship");
+                int adpt = sda.Update(ds, "scholarship");
 
-                if (update == 1)
+                if (adpt == 1)
                 {
-                    MessageBox.Show(@"Referral Successful!", @"Confirmation", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    MessageBox.Show("Referral Successful!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     button6.Enabled = true;
                 }
             }

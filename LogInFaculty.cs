@@ -8,6 +8,7 @@ namespace Know_Your_Scholarship_
     public partial class LogInFaculty : Form
     {
         public static string Username = "";
+        public static int id;
 
         public LogInFaculty()
         {
@@ -61,6 +62,7 @@ namespace Know_Your_Scholarship_
                 cmd = new MySqlCommand(selectQuery, con);
                 mdr = cmd.ExecuteReader();
                 mdr.Read();
+                id = int.Parse(mdr[0].ToString());
                 Username = mdr[1].ToString();
                 Hide();
                 var f = new DashboardFaculty();

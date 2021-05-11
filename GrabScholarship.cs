@@ -7,6 +7,7 @@ namespace Know_Your_Scholarship_
     public partial class GrabScholarship : Form
     {
         public static string SetValueForText1 = "";
+        public static string stts = "";
 
         public GrabScholarship()
         {
@@ -42,6 +43,7 @@ namespace Know_Your_Scholarship_
                            "AND scholarship.professorFunding = professor.id " +
                            "AND professor.university_id = university.id " +
                            "AND professor.subject_id = subject.id " +
+                           "AND scholarship.confirmation = 'confirmed'" +
                            "AND university.country_id = country.id AND scholarship.id = " +
                            textBox1.Text;
             cmd2 = new MySqlCommand(selectQuery2, con2);
@@ -58,7 +60,8 @@ namespace Know_Your_Scholarship_
                 textBox5.Text = mdr2["sname"].ToString();
                 textBox6.Text = mdr2["aname"].ToString();
                 textBox7.Text = mdr2["fname"].ToString();
-                textBox8.Text = mdr2["sstatus"].ToString();
+                stts = textBox8.Text = mdr2["sstatus"].ToString();
+                button3.Enabled = true;
             }
 
             else
@@ -76,14 +79,15 @@ namespace Know_Your_Scholarship_
                                "subject.name AS sname, " +
                                "scholarship.referringAlumni AS aname, " +
                                "scholarship.referringFaculty AS fname, " +
-                               "scholarship.status AS sstatus FROM scholarship, " +
-                               "university, professor, subject, " +
-                               "country WHERE scholarship.referringFaculty IS NOT NULL " +
+                               "scholarship.status AS sstatus " +
+                               "FROM scholarship, university, professor, subject, country " + 
+                               "WHERE scholarship.referringFaculty IS NOT NULL " +
                                "AND scholarship.referringAlumni IS NULL " +
                                "AND scholarship.professorFunding = professor.id " +
                                "AND professor.university_id = university.id " +
                                "AND professor.subject_id = subject.id " +
                                "AND university.country_id = country.id " +
+                               "AND scholarship.confirmation = 'confirmed'" +
                                "AND scholarship.id = " + textBox1.Text;
 
                 cmd3 = new MySqlCommand(selectQuery3, con3);
@@ -99,7 +103,9 @@ namespace Know_Your_Scholarship_
                     textBox5.Text = mdr3["sname"].ToString();
                     textBox6.Text = mdr3["aname"].ToString();
                     textBox7.Text = mdr3["fname"].ToString();
-                    textBox8.Text = mdr3["sstatus"].ToString();
+                    stts = textBox8.Text = mdr3["sstatus"].ToString();
+                    
+                    button3.Enabled = true;
                 }
                 else
                 {
@@ -113,7 +119,7 @@ namespace Know_Your_Scholarship_
                     MessageBox.Show(@"Invalid Scholarship ID", @"Warning", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                 }
-
+                
                 con3.Close();
             }
         }
@@ -134,6 +140,11 @@ namespace Know_Your_Scholarship_
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (stts[0] != 'U')
+            {
+                MessageBox.Show("Already Grabbed!", "Error", MessageBoxButtons.OKCancel);
+                return;
+            } 
             Hide();
             var f = new GrabConfirm();
             f.Show();
@@ -141,6 +152,7 @@ namespace Know_Your_Scholarship_
 
         private void GrabScholarship_Load(object sender, EventArgs e)
         {
+            button3.Enabled = false;
         }
     }
 }

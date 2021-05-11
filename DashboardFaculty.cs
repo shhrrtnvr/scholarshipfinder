@@ -6,6 +6,7 @@ namespace Know_Your_Scholarship_
     public partial class DashboardFaculty : Form
     {
         public static string Username = "";
+        public static int id;
 
         public DashboardFaculty()
         {
@@ -20,6 +21,8 @@ namespace Know_Your_Scholarship_
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Username = LogInFaculty.Username;
+            id = LogInFaculty.id;
             var f = new ReferScholarshipFaculty();
             f.Show();
         }
