@@ -45,11 +45,11 @@ namespace Know_Your_Scholarship_
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Quikhand", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(652, 44);
+            this.label1.Location = new System.Drawing.Point(609, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 61);
+            this.label1.Size = new System.Drawing.Size(136, 67);
             this.label1.TabIndex = 1;
             this.label1.Text = "Grab";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -57,11 +57,11 @@ namespace Know_Your_Scholarship_
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Quikhand", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(712, 123);
+            this.label2.Location = new System.Drawing.Point(720, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 61);
+            this.label2.Size = new System.Drawing.Size(134, 67);
             this.label2.TabIndex = 2;
             this.label2.Text = "Your";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -69,21 +69,21 @@ namespace Know_Your_Scholarship_
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Quikhand", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(616, 198);
+            this.label3.Location = new System.Drawing.Point(623, 199);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(356, 70);
+            this.label3.Size = new System.Drawing.Size(311, 67);
             this.label3.TabIndex = 3;
             this.label3.Text = "Scholarship!";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Quikhand", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(725, 350);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 42);
+            this.label4.Size = new System.Drawing.Size(144, 41);
             this.label4.TabIndex = 4;
             this.label4.Text = "Log In As";
             // 
@@ -91,7 +91,7 @@ namespace Know_Your_Scholarship_
             // 
             this.studentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(112)))), ((int)(((byte)(98)))));
             this.studentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.studentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentButton.Font = new System.Drawing.Font("Linotte-Heavy", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentButton.ForeColor = System.Drawing.Color.White;
             this.studentButton.Location = new System.Drawing.Point(711, 394);
             this.studentButton.Name = "studentButton";
@@ -105,7 +105,7 @@ namespace Know_Your_Scholarship_
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(238)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Linotte-Heavy", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(622, 500);
             this.button2.Name = "button2";
@@ -119,7 +119,7 @@ namespace Know_Your_Scholarship_
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Linotte-Heavy", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(798, 500);
             this.button3.Name = "button3";
@@ -132,7 +132,7 @@ namespace Know_Your_Scholarship_
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Linotte-Heavy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(872, 699);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 50);

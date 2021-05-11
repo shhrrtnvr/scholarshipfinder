@@ -96,5 +96,10 @@ namespace Know_Your_Scholarship_
             var f = new SignUpAlumni();
             f.Show();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

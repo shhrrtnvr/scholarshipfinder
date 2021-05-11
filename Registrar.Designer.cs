@@ -59,7 +59,7 @@ namespace Know_Your_Scholarship_
             this.referring_alumni,
             this.referring_faculty,
             this.confirmation});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.Font = new System.Drawing.Font("Linotte-Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 80);
@@ -107,43 +107,43 @@ namespace Know_Your_Scholarship_
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(289, 9);
+            this.label5.Font = new System.Drawing.Font("Quikhand", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(304, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(441, 61);
+            this.label5.Size = new System.Drawing.Size(367, 58);
             this.label5.TabIndex = 189;
             this.label5.Text = "Registrar Control";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Linotte-Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(242, 537);
+            this.label2.Location = new System.Drawing.Point(364, 537);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(488, 37);
+            this.label2.Size = new System.Drawing.Size(464, 38);
             this.label2.TabIndex = 190;
             this.label2.Text = "Confirm a Scholarship to Show";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Linotte-Heavy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(347, 591);
+            this.label1.Location = new System.Drawing.Point(347, 596);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 29);
+            this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 191;
             this.label1.Text = "Scholarship ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Linotte-Heavy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(131, 633);
+            this.label3.Location = new System.Drawing.Point(158, 638);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(387, 29);
+            this.label3.Size = new System.Drawing.Size(340, 25);
             this.label3.TabIndex = 192;
             this.label3.Text = "Set a Passcode for the Scholarship";
             // 
@@ -161,28 +161,28 @@ namespace Know_Your_Scholarship_
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(524, 590);
             this.textBox1.MaxLength = 10;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 31);
+            this.textBox1.Size = new System.Drawing.Size(304, 32);
             this.textBox1.TabIndex = 194;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(524, 632);
             this.textBox2.MaxLength = 20;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(304, 31);
+            this.textBox2.Size = new System.Drawing.Size(304, 32);
             this.textBox2.TabIndex = 195;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.ForestGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Linotte-Heavy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(728, 668);
             this.button1.Name = "button1";

@@ -37,13 +37,13 @@ namespace Know_Your_Scholarship_
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button1.Font = new System.Drawing.Font("Linotte-Heavy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(700, 225);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 120);
@@ -56,7 +56,7 @@ namespace Know_Your_Scholarship_
             // 
             this.button2.BackColor = System.Drawing.Color.Crimson;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button2.Font = new System.Drawing.Font("Linotte-Heavy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(700, 360);
             this.button2.Name = "button2";
@@ -70,7 +70,7 @@ namespace Know_Your_Scholarship_
             // 
             this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button3.Font = new System.Drawing.Font("Linotte-Heavy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(872, 709);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 40);
@@ -82,10 +82,10 @@ namespace Know_Your_Scholarship_
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label5.Location = new System.Drawing.Point(650, 110);
+            this.label5.Font = new System.Drawing.Font("Quikhand", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(675, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(293, 61);
+            this.label5.Size = new System.Drawing.Size(236, 58);
             this.label5.TabIndex = 18;
             this.label5.Text = "Dashboard";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -118,22 +118,22 @@ namespace Know_Your_Scholarship_
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.Font = new System.Drawing.Font("Linotte-Heavy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(630, 23);
+            this.label2.Location = new System.Drawing.Point(610, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 29);
+            this.label2.Size = new System.Drawing.Size(93, 32);
             this.label2.TabIndex = 36;
             this.label2.Text = "Hello, ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Linotte-Heavy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(709, 23);
+            this.label1.Location = new System.Drawing.Point(709, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 29);
+            this.label1.Size = new System.Drawing.Size(56, 32);
             this.label1.TabIndex = 35;
             this.label1.Text = "101";
             // 
@@ -158,9 +158,10 @@ namespace Know_Your_Scholarship_
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardStudent";
             this.Load += new System.EventHandler(this.DashboardStudent_Load);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

@@ -25,7 +25,6 @@ namespace Know_Your_Scholarship_
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Hide();
             var f = new GrabScholarship();
             f.Show();
         }

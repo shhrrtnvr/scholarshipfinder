@@ -37,7 +37,7 @@ namespace Know_Your_Scholarship_
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button1.Font = new System.Drawing.Font("Linotte-Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(297, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 30);
@@ -48,20 +48,20 @@ namespace Know_Your_Scholarship_
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.textBox1.Font = new System.Drawing.Font("Linotte-Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(71, 70);
             this.textBox1.MaxLength = 200;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 31);
+            this.textBox1.Size = new System.Drawing.Size(243, 33);
             this.textBox1.TabIndex = 29;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.Font = new System.Drawing.Font("Linotte-Heavy", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 31);
+            this.label2.Size = new System.Drawing.Size(108, 32);
             this.label2.TabIndex = 31;
             this.label2.Text = "Subject";
             // 
@@ -82,6 +82,7 @@ namespace Know_Your_Scholarship_
             this.Text = "Add Subject";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

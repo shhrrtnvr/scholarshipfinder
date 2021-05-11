@@ -116,7 +116,7 @@ namespace Know_Your_Scholarship_
                     textBox6.Text = "";
                     textBox7.Text = "";
                     textBox8.Text = "";
-                    MessageBox.Show(@"Invalid Scholarship ID", @"Warning", MessageBoxButtons.OK,
+                    MessageBox.Show(@"Scholarship Not Confirmed Yet or Invalid Scholarship ID", @"Warning", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                 }
                 
